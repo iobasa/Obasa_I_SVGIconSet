@@ -3,6 +3,9 @@
 
     /* python print -> console.log is the same thing */
     console.log('my JS is workin!');
+    //let statements top
+    //funtions in the middle
+    //interactions in the bottom
 
     // select elements with Javascript
 
@@ -13,8 +16,10 @@
     let svgGraphic = document.querySelector("#badgeSVG"), //can be reused
         mainHeadline = document.querySelector(".main-headline");
         svgName = document.querySelector(".svgname");
+        swapTextButton = document.querySelector(".switch-type");
 
     //functions are reusable pieces of code
+    //funtions in the middle
     // that you can run any time
     function logMyId() {
       console.log(this.id);
@@ -22,8 +27,20 @@
     this.style.opacity = 0.5; //changes opacity
   }
 
-    svgGraphic.addEventListener("click", logMyId);
-
+    function swapText() {
     mainHeadline.textContent = "Now you're something else!";
+    mainHeadline.classList.toggle("selected"); //methods, eg. .add
+
     svgName.textContent = "Example";
+    svgName.classList.toggle("selected"); //goes back and forth
+    }
+
+    //def swapText:
+    //statement
+    //statement
+    //statement
+
+    //events, go at the bottom of files
+    svgGraphic.addEventListener("click", logMyId);
+    swapTextButton.addEventListener("click", swapText);
 })();
