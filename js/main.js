@@ -13,18 +13,23 @@
     // and using a CSS selector to find the element wewant to use.
 
     //let stores the reference to element as a variable (in memory)
-    let svgGraphic = document.querySelector("#badgeSVG"), //can be reused
-        mainHeadline = document.querySelector(".main-headline");
+    let mainHeadline = document.querySelector(".main-headline");//can be reused
         svgName = document.querySelector(".svgname");
         swapTextButton = document.querySelector(".switch-type");
+        allImages = document.querySelectorAll("#image-container img"); //pointing at many things
+
+        //#image-container img {
+          //cursor: pointer;
+        //}
 
     //functions are reusable pieces of code
     //funtions in the middle
     // that you can run any time
     function logMyId() {
       console.log(this.id);
+    // toggle a class here with classlist
 
-    this.style.opacity = 0.5; //changes opacity
+    //this.style.opacity = 0.5; //changes opacity
   }
 
     function swapText() {
@@ -41,6 +46,11 @@
     //statement
 
     //events, go at the bottom of files
-    svgGraphic.addEventListener("click", logMyId);
+    //svgGraphic.addEventListener("click", logMyId);
     swapTextButton.addEventListener("click", swapText);
+
+    // select and loop through a bunch of items at once -> one to many relationship
+    allImages.forEach(item => {
+      item.addEventListener("click", logMyId);
+    });
 })();
