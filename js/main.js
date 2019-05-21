@@ -17,6 +17,7 @@
         svgName = document.querySelector(".svgname");
         swapTextButton = document.querySelector(".switch-type");
         allImages = document.querySelectorAll("#image-container img"); //pointing at many things
+        objectButton = document.querySelector(".container button");
 
         //#image-container img {
           //cursor: pointer;
@@ -40,6 +41,11 @@
     svgName.classList.toggle("selected"); //goes back and forth
     }
 
+    function logTheSVG() {
+      console.log(this.previousElementSibling.id);
+      //debugger;
+    }
+
     //def swapText:
     //statement
     //statement
@@ -53,4 +59,8 @@
     allImages.forEach(item => {
       item.addEventListener("click", logMyId);
     });
+
+    //the button beside the svg ObjectButton
+    objectButton.addEventListener("click", logTheSVG);
+
 })();
